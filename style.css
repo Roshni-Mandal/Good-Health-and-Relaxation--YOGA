@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+header{
+    background-image:url(https://wallpaperaccess.com/full/139100.jpg);
+    height: 120vh;
+    padding: 2px;
+    background-size: cover;
+    background-position: center;
+    margin-top: 0px;
+    box-sizing: border-box;
+    background-blend-mode: darken;
+}
+
+ul{
+    float: right;
+    list-style-type: none;
+    margin-top: 25px;
+}
+
+ul li{
+    display: contents;
+    font-style: initial;
+    font-family: monospace;
+}
+
+ul li a{
+    text-decoration: lightseagreen;
+    color: black;
+    padding: 50px 30px;
+    border: 20px solid transparent;
+    transition: 1s ease;
+
+}
+
+ul li a:hover{
+    background-color: rgb(222, 222, 238);
+    color: rgb(9, 3, 83);
+    transform: scale(0.5);
+}
+
+ul li.active a{
+    background-color: rgb(222, 222, 238);
+    color: #000
+}
+
+.logo img{
+    float: left;
+    width: 100px;
+    height: auto;
+    background-color: rgb(236, 234, 231);
+}
+
+.main{
+    max-width: 1200px;
+
+}
+.title{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+}
+
+.title h1{
+    color:#C86604 ;
+    font-size: 50px;
+    text-decoration: lightsalmon;
+    text-align: right;
+    font-style: oblique;
+    float: inline-start;
+    width: 1000px;
+    border: 3px solid #000
+    padding 20px;
+}
+
+.title p2{
+    color: rgb(221, 87, 9);
+    font-size: 20px;
+    text-align: justify;
+    font-style: italic;
+    float: right;
+}
+
+.title p1{
+    color: rgba(231, 153, 8, 0.966);
+    font-size: 25px;
+    text-align: justify;
+    font-style: oblique;
+    float: right;
+    width: 700px;
+}
