@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Contact us</title>
     <link rel="stylesheet" href="contact us.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" integrity="sha384-wESLQ85D6gbsF459vf1CiZ2+rr+CsxRY0RpiF1tLlQpDnAgg6rwdsUF1+Ics2bni" crossorigin="anonymous">
@@ -39,27 +41,83 @@
                
             </div>
             <div class="contactForm">
-                <form>
-                    <h2>Send Message</h2>
+                <form action="javascript:sendmail()" method="post">
+                    <h2><!-- Send Message --></h2>
                     <div class="inputBox">
-                        <input type="text" name="" required="required">
-                        <span>Full Name</span>
+                        <input type="text" class="form-control" name="Name" id="Name" placeholder="Name" required="">
+                        <span><!-- Full Name --></span>
                     </div>
                     <div class="inputBox">
-                        <input type="text" name="" required="required">
-                        <span>Email</span>
+                        <input type="email" class="form-control" name="Sender" id="Sender" placeholder="Email"
+                  required="">
+                        <span><!-- Email --></span>
                     </div>
                     <div class="inputBox">
-                       <textarea required="required"></textarea>
-                        <span>Type your Message...</span>
-                    
-                    </div>
+                    <input type="text" class="form-control" name="Subject" id="Subject" placeholder="Subject"
+                  required="" value="">
                     <div class="inputBox">
+                       <textarea name="Message" class="form-control" id="Message" placeholder="Message"
+                required=""></textarea>
+                       
+                    <button type="submit" class="btn btn-contact">Send Message</button>
+                    </div>
+                    <!-- <div class="inputBox">
                        <input type="Submit" name="" value="send"> 
-                    </div>
+                    </div> -->
                 </form>
             </div>
         </div>
     </section>
+
+
+ <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> 
+<script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+ 
+<script>  
+
+     function sendmail(){
+    
+            var name = $('#Name').val();
+            var email = $('#Sender').val();
+            var subject = $('#Subject').val();
+      var message = $('#Message').val();
+
+            // var body = $('#body').val();
+
+            var Body='Name: '+name+'<br>Email: '+email+'<br>Subject: '+subject+'<br>Message: '+message;
+            //console.log(name, phone, email, message);
+
+            Email.send({
+        SecureToken:"fbf31702-bb7f-4a4e-9c1c-4ccf17ee777f",
+                To: 'roshnimandal55@gmail.com',
+                From: "roshni.20204128@mnnit.ac.in",
+                Subject: "New message on contact from "+name,
+                Body: Body
+            }).then(
+                message =>{
+                    //console.log (message);
+                    if(message=='OK'){
+                    alert('Your mail has been send. Thank you for connecting.');
+                    }
+                    else{
+                        console.error (message);
+                        alert('There is error at sending message. ')
+                        
+                    }
+
+                }
+            );
+
+
+
+        }
+
+
+    </script>
+ </script>
 </body>
 </html>
